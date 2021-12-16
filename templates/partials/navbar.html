@@ -1,0 +1,58 @@
+{% load static %}
+
+
+    <!-- Nav Starts -->
+    <header>
+        <div class="left-header">
+            <div class="bars">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+                <div class="dropdown">
+                    <li><a href="/">Channels</a></li>
+                    <li><a href="/">Languages</a></li>
+                    <li><a href="/">Genres</a></li>
+                </div>
+            </div>
+            <div class="brand">
+                <a href="/">
+                    <img src="{% static 'tubi_icon2.jpg' %}" alt="">
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li class="drop-down-parent"><a href="/">Series</a>
+                        <ul class="li-ul-dropdown">
+                            <li><a href="/">English</a></li>
+                            <li><a href="/">Korean</a></li>
+                            <li><a href="/">Chinese</a></li>
+                            <li><a href="/">Spanish</a></li>
+                            <li><a href="/">Japanese</a></li>
+                        </ul>
+                   </li>
+                   <li class="drop-down-parent"><a href="/">Movies</a>
+                    <ul class="li-ul-dropdown">
+                       <li><a href="/">Hindi</a></li>
+                       <li><a href="/">English</a></li>
+                       <li><a href="/">Marathi</a></li>
+                       <li><a href="/">Telugu</a></li>
+                       <li><a href="/">Bengali</a></li>
+                       <li><a href="/">Malayalam</a></li>
+                       <li><a href="/">Kannada</a></li>
+                    </ul>
+              </li>
+                </ul>
+                
+            </nav>
+            
+        </div>
+        <div class="right-header">
+            <div class="btnl">
+                {% if user.is_authenticated %}
+                <p class="user-login"><a href="/">{{user.get_username}}</a>&nbsp; <a href="{% url 'account_logout' %}">  Logout</a></p>
+                {% else %}
+                    <div class="user-login"><a href="{% url 'account_login' %}">Login</a></div>
+                {% endif %}
+            </div>
+                     
+        </div>
+    </header>
+    <!-- Nav Ends -->
